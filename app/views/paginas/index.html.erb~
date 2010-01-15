@@ -1,0 +1,20 @@
+<h2>Páginas</h2>
+<big><%= link_to "Nueva", :action => "new" %></big>
+<table class="index">
+  <tr>
+    <th>Nombre</th>
+    <th>URL</th>
+    <th>Debajo de</th>
+    <th colspan="2">Acciones</th>
+  </tr>
+  <% for pagina in @paginas %>
+  <tr>
+    <td><%= pagina.nombre %></td>
+    <td><%= pagina.url %></td>
+    <td><%= pagina.pagina_madre.nombre if pagina.pagina_madre %></td>
+    <td><%= link_to "Editar", :action => "edit", :id => pagina.url %></td>
+    <td><%= link_to_unless pagina.tiene_relaciones?, "Eliminar", {:action => "destroy", :id => pagina.url}, {:method => "delete", :confirm => "Desea eliminarla?"} %></td>
+  </tr>
+  <% end %>
+</table>
+

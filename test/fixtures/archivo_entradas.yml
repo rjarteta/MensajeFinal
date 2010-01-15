@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  archivo_id: 1
+  entrada_id: 1
+  muestra_cont: false
+
+two:
+  archivo_id: 1
+  entrada_id: 1
+  muestra_cont: false

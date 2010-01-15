@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nombre: MyString
+  url: MyString
+  tipo: 1
+  peso: 1
+  ext: MyString
+  padre_id: 1
+  fecha_fisica: 2009-10-23
+
+two:
+  nombre: MyString
+  url: MyString
+  tipo: 1
+  peso: 1
+  ext: MyString
+  padre_id: 1
+  fecha_fisica: 2009-10-23

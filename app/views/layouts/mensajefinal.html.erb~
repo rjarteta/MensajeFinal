@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="es" />
+    <title>C.M. "El Mensaje Final de Dios" <%= @pagina ? " - "+@pagina.nombre.to_s : "" %></title>
+    
+    <%= stylesheet_link_tag "main", :media => "screen, projection" %>
+    <%= stylesheet_link_tag "aural", :media => "aural" %>
+    <%= stylesheet_link_tag "aural", :media => "print" %>
+    <%= javascript_include_tag :all%>
+    <link rel="icon" type="image/x-icon" href="/images/Logo.ico" />
+    <link rel="shortcut icon" href="/images/Logo.ico" />
+  </head>
+  <body id="www-url-cz">
+    <div id="main" class="box">
+      <div id="header">
+  <h1 id="logo"><a href="/" title="MensajeFinal.net [Ir al inicio]"><%= image_tag "design/logo.png", :alt => "logo" %></a></h1>
+
+<hr class="noscreen" />
+        
+
+    </div> <!-- /header -->
+    
+    <!-- Main menu (tabs) -->
+     <div id="tabs" class="noprint">
+        <h3 class="noscreen">Navegación</h3><% raiz = Pagina.find_by_url "/", :select => "id" %>
+        <% if raiz %>
+        <ul class="box">
+        <% for pag in raiz.paginas_hijas %>
+          <% if @pagina then (activa = pag.id == @pagina.id ? "id='active'" : "") end %>
+          <li <%= activa.to_s %>><a href="<%= pag.url %>"><%= pag.nombre %><span class="tab-l"></span><span class="tab-r"></span></a></li>
+        <% end -%>
+        </ul>
+        <% end %>
+        <div class="noscreen noprint">
+        <p><em>Quick links: <a href="#content">Contenido</a>, <a href="#tabs">Navegación</a>, <!--Nav automática -->
+        <a href="#search">Buscar</a>.</em></p>    
+        </div>     
+        <!-- Search -->
+        <div id="search" class="noprint">
+            <form action="" method="get">
+                <fieldset><legend>Buscar</legend>
+                    <label><span class="noscreen">Find:</span>
+                    <span id="search-input-out"><input type="text" name="" id="search-input" size="30" /></span></label>
+                    <input type="image" src="/images/design/search_submit.gif" id="search-submit" value="OK" />
+                </fieldset>
+            </form>
+        </div> <!-- /search -->
+        <hr class="noscreen" />
+     </div> <!-- /tabs -->
+     
+      <div id="page" class="box">
+        <div id="page-in" class="box">
+          <% if flash[:notice] %><div id="notice"><%= flash[:notice] %></div><% end %>
+          <% if flash[:error] %><div id="error"><%= flash[:error] %></div><% end %>
+          <div id="content">
+            <%= yield %>
+          </div>
+        <div id="col" class="noprint">
+          <div id="col-in">
+            <% if logueado? -%>
+            <%= render :partial => "usuarios/mis_datos" %>
+            <% end -%>
+            <%= yield :sidebar %>
+            <% unless logueado? -%>
+            <%= link_to_function "Login", "$('log-form').toggle()" %>
+              <% form_tag url_for(:controller => "usuarios", :action => "login"), :id => "log-form", :style => "display:none" do %>
+              <p>email: <%= text_field_tag :email %></p>
+              <p>pass: <%= password_field_tag :password %></p>
+              <%= submit_tag "Entrar" %>
+            <% end %>
+            <% end -%>
+          </div>
+        </div>
+       </div>
+       </div>
+      <!-- Footer -->
+    <div id="footer">
+        <div id="top" class="noprint"><p><span class="noscreen">Volver a arriba</span> <a href="#header" title="Volver a arriba ^">^<span></span></a></p></div>
+        <hr class="noscreen" />
+        
+        <p id="createdby">created by <a href="http://www.nuvio.cz">Nuvio | Webdesign</a> <!-- DON´T REMOVE, PLEASE! --></p>
+        <p id="copyright">Copyright &copy; <%= Time.now.strftime "%Y" %>, Centro Misionero "El Mensaje Final de Dios". Para la Honra del Dios Todo Poderoso.
+    </div> <!-- /footer -->
+    </div>
+  </body>
+</html>

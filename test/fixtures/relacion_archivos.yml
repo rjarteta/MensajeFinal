@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  archivo_orig_id: 1
+  archivo_dest_id: 1
+  tipo_relacion: 1
+  desc_relacion: MyText
+
+two:
+  archivo_orig_id: 1
+  archivo_dest_id: 1
+  tipo_relacion: 1
+  desc_relacion: MyText

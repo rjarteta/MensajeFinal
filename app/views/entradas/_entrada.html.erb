@@ -1,0 +1,28 @@
+<div class="article" id="<%= entrada.url %>">
+  <h2><%= link_to_function entrada.nombre, "$('#{entrada.url}-contenido').toggle()" %></h2>
+  <p class="info"> Último cambio: <span class="date"><%= I18n.l entrada.updated_at.in_time_zone %></span></p>
+  <div id="<%= entrada.url %>-contenido" style="display:<%= entrada.display %>">
+    <%= entrada.contenido %>
+    <ul class="archivo">
+     <% for ae in entrada.archivo_entradas -%>
+      <% archivo = ae.archivo 
+      if archivo.carpeta? -%>
+      <li><h4><%= link_to_function archivo.nombre do |page|
+          page.visual_effect :toggle_blind, "carpeta-#{archivo.id}"
+          end %></h4>
+          <ul id="carpeta-<%= archivo.id%>" style="display:<%= ae.display %>">
+            <% for ar in archivo.hijos.all(:conditions => Archivo::TIPO_ARCHIVO["Archivo"]) %>
+              <li class="archivo-list"><%= link_to ar.nombre, PAGINA_ARCHIVOS+ar.url %></li>
+            <% end %>
+          </ul>
+      </li>
+      <% else -%>
+      <li class="archivo-list"><%= link_to archivo.nombre, PAGINA_ARCHIVOS+archivo.url %></li>
+     <% end -%>
+     <% end -%>
+    </ul>
+  <% if logueado? && current_user.admin? -%>
+  <%= link_to "Editar entrada", :controller => "entradas", :action => "edit", :id => entrada.id %>
+  <% end -%>
+  </div>
+</div>

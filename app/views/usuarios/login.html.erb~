@@ -1,0 +1,6 @@
+<h2>Login</h2>
+<% form_tag url_for(:action => "login") do %>
+  <p>email: <%= text_field_tag :email %></p>
+  <p>pass: <%= text_field_tag :password %></p>
+  <%= submit_tag "Entrar" %>
+<% end %>

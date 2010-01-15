@@ -1,0 +1,8 @@
+<h1>Mostrar Usario</h1>
+<!-- TODO: Show Image -->
+<p> <b>Nombre: </b> <%=h @usuario.nombre %><br />
+  <b>Localización: </b> <%=h @usuario.localizacion %><br />
+  <b>Autorización: </b> <%=h Usuario::NIVEL_AUTORIZACION[@usuario.autorizacion] %><br />
+  <b>E-mail: </b> <%=h @usuario.email %><br />
+</p>
+<p><%= link_to "Atrás", :action => "index" %> | <%= link_to "Editar", :action => "edit", :id => @usuario.id %></p>

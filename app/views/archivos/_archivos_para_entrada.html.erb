@@ -1,0 +1,13 @@
+<table class="index" id="resultados_busqueda">
+  <tr>
+    <th>URL</th>
+    <th></th>
+  </tr>
+<% for archivo in @archivos %>
+  <tr id="archivo_agregable_<%= archivo.id %>">
+    <td><%=h archivo.url %></td>
+    <td><%= link_to_remote "Agregar", :url => {:controller => "archivos", :action => "agregar_a_entrada"}, :with => "'archivo_id='+escape(#{archivo.id})", :method => :get %></td>
+  </tr>
+<% end %>  
+  <tr colspan="2"><%= will_paginate @archivos, :params => {:controller => "archivos", :action => "buscar_archivos_para_entrada", :s => @s} %></tr>
+</table>

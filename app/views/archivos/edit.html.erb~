@@ -1,0 +1,16 @@
+<% form_for @archivo, :url => {:action => "update"}, :html => {:method => :put} do |f| %>
+<div id="work-left">
+  <%= f.error_messages %>
+  <p>Nombre: <br />
+  <%= f.text_field :nombre %></p>
+  <p>
+  Fecha Física: <br />
+  <%= f.calendar_date_select :fecha_fisica %></p>
+  
+  <%= f.submit_tag "Actualizar" %>
+</div>
+
+<div id="work-right">
+  
+</div>
+<% end %>

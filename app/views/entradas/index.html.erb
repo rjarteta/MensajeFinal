@@ -1,0 +1,26 @@
+<h1>Lista de Entradas</h1>
+<% form_tag url_for(:action => "index"), :method => :get do %>
+  <% s = params[:s] || "Buscar entrada" %>
+  Busqueda: <%= text_field_tag :s, s, :onfocus => "$(this).value =''" %> - <%= submit_tag "Buscar" %>
+<% end %>
+
+<table class="index">
+  <tr>
+    <th>Nombre</th>
+    <th>En Página</th>
+    <th>Desplegada</th>
+    <th colspan="2">Acciones</th>
+  </tr>
+  
+  <% for entrada in @entradas %>
+  <tr> 
+    <td><%=h entrada.nombre %></td>
+    <td><%=h entrada.pagina.nombre %></td>
+    <td><%=h entrada.muestra_contenido ? "Sí" : "No" %></td>
+    <td><%= link_to "Editar", :action => "edit", :id => entrada.id %></td>
+    <td><%= link_to_unless entrada.tiene_relaciones?, "Eliminar", {:action => "destroy", :id => entrada.id}, :method => :delete, :confirm => "¿Realmente desea eliminar esta entrada?"  %></td>
+  </tr>
+  <% end %>
+  
+</table>
+<p><b><%= will_paginate @entradas, :previous_label => "< Anterior", :next_label => "Siguiente >", :class => "pages" %></b> | <%= link_to "Nueva entrada", :action => "new" %></p>

@@ -1,0 +1,7 @@
+<% archivo_entrada ||= ArchivoEntrada.new -%>
+<p id="archivo-<%= archivo.id %>"><small><%= archivo.url %> - Muestra Contenido <%= check_box( :archivos, "muestra_contenido_#{archivo.id}", :checked => (archivo_entrada.muestra_cont ? "checked" : "")) if archivo.tipo == Archivo::TIPO_ARCHIVO["Carpeta"] %>
+<%= hidden_field :archivos, "archivo_#{archivo.id}", :value => archivo.id %>
+- Prioridad <%= text_field :archivos, "orden_#{archivo.id}", :size => 2, :value => archivo_entrada.orden %></small>
+- <%= link_to_function "Eliminar" do |page|
+    page.remove "archivo-#{archivo.id}"
+   end %></p>

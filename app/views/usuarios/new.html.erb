@@ -1,0 +1,19 @@
+<h1>Nuevo Usuario</h1>
+<div class="error"><%= error_messages_for :usuario  %></div>
+<% form_for :usuario, @usuario, :url => {:action => "create"} do |f| %>
+  <p><b><%= f.label "nombre" %></b><br/>
+  <%= f.text_field "nombre" %></p>
+  <p><b><%= f.label "localizacion" %></b><br/>
+  <%= f.text_field "localizacion" %></p>
+  <p><b><%= f.label "email" %></b><br/>
+  <%= f.text_field "email" %></p>
+  <p><b><%= f.label "autorizacion", "Nivel de acceso" %></b><br/>
+  <%= f.select "autorizacion", Usuario::NIVEL_AUTORIZACION.invert %></p>
+  <p><b><%= f.label "password", "Contraseña" %></b><br/>
+  <%= f.password_field "password" %></p>
+  <p><b><%= f.label "password_confirmation", "Confirmar contraseña" %></b><br/>
+  <%= f.password_field "password_confirmation" %></p>
+  <p><%= f.submit "Crear" %></p>
+  <!-- TODO: Submit Image -->
+<% end %>
+<p><%= link_to "Cancelar", usuarios_path %></p>
