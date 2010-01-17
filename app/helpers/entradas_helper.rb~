@@ -1,7 +1,0 @@
-module EntradasHelper
-  def agregar_archivo_a_entrada
-    link_to_function 'Agregar' do |page|
-      page.insert_html "archivos_en_entrada", "bottom", :partial => "campos_para_entrada"
-    end
-  end
-end

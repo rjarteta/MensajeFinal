@@ -1,3 +1,0 @@
-<%= form_tag url_for(:action => "insertar_clave") do %>
-  Por favor, insertar clave: <%= password_field_tag "clave" %> - <%= submit_tag "Entrar" %>
-<%= end %>

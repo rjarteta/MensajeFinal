@@ -126,7 +126,7 @@ protected
         archivo.delete if not File.exist?(RAILS_ROOT+archivo.url)
       end
     end
-    super_mantenedor_de_consistencia(archivo_id)
+    super_mantenedor_de_consistencia
   end
   
   def cortar_ext(nombre)

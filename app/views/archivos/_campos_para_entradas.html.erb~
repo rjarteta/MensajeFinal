@@ -1,6 +1,0 @@
-<% fields_for :archivo_entradas, ArchivoEntrada.new, :child_index => archivo.id do |f| %>
-  <%= f.hidden_field :archivo_id, :value => archivo.id %>
-  <%= f.hidden_field :entrada_id, :value => entrada.id %>
-  <%= f.hidden_field :protegida, :value => @entrada.protegida %>
-  <%= %>
-<% %>

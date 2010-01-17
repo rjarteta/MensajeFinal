@@ -114,7 +114,6 @@ protected
   
    def mantenedor_consistencia(url)
     raiz = Archivo.find_by_url(url)
-    #Otro tipo de mantenedor TODO
     
     return unless raiz
     if not File.exist?(RAILS_ROOT+raiz.url)

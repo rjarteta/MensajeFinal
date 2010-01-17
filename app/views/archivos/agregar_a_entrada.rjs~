@@ -1,2 +1,0 @@
-page.delete "archivo_agregable_#{@archivo.id}"
-page.insert_html :bottom, "archivos_asociados", :partial => "campos_para_entrada", :locals => {:archivo => @archivo}
