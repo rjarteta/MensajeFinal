@@ -45,4 +45,5 @@ production:
   pool: 5
   username: mensajef_admin
   password: arteta
-  socket: /var/run/mysqld/mysqld.sock
+  host: localhost
+#  socket: /var/run/mysqld/mysqld.sock
