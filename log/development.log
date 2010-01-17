@@ -33826,3 +33826,204 @@ default_url_options is passed options: {:only_path=>true, :controller=>"entradas
 default_url_options is passed options: {:only_path=>true, :controller=>"archivos"}
 default_url_options is passed options: {:only_path=>true, :controller=>"usuarios"}
 Completed in 62ms (View: 47, DB: 2) | 200 OK [http://localhost/archivos?locale=es&page=4]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-01-17 08:54:21) [GET]
+  Parameters: {"url"=>"/", "action"=>"show", "controller"=>"paginas"}
+  [4;36;1mPagina Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (14.0ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+
+ArgumentError (syntax error on line 91, col 20: `        inclusion: "no está incluído en la lista"'):
+  /usr/lib/ruby/1.8/yaml.rb:133:in `load'
+  /usr/lib/ruby/1.8/yaml.rb:133:in `load'
+  app/controllers/paginas_controller.rb:27:in `show'
+
+Rendered rescues/_trace (73.5ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-01-17 13:02:13) [GET]
+  Parameters: {"url"=>"/", "action"=>"show", "controller"=>"paginas"}
+  [4;36;1mPagina Columns (192.0ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (0.3ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/show
+  [4;36;1mEntrada Load (54.9ms)[0m   [0;1mSELECT * FROM `entradas` WHERE (`entradas`.pagina_id = 1) ORDER BY updated_at DESC[0m
+  [4;35;1mEntrada Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `entradas`[0m
+  [4;36;1mArchivoEntrada Load (18.9ms)[0m   [0;1mSELECT * FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 2) ORDER BY orden[0m
+Rendered entradas/_entrada (193.2ms)
+  [4;35;1mPagina Load (0.7ms)[0m   [0mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;36;1mPagina Load (0.7ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:only_path=>true, :action=>"login", :controller=>"usuarios"}
+Completed in 923ms (View: 621, DB: 271) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-01-17 13:07:53) [GET]
+  Parameters: {"url"=>["<hr"], "action"=>"show", "controller"=>"paginas"}
+  [4;35;1mPagina Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `paginas`[0m
+  [4;36;1mPagina Load (0.5ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/<hr') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/no_encontrado (404)
+  [4;35;1mPagina Load (0.2ms)[0m   [0mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;36;1mPagina Load (0.3ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:only_path=>true, :action=>"login", :controller=>"usuarios"}
+Completed in 49ms (View: 32, DB: 3) | 404 Not Found [http://localhost/%3Chr]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-01-17 13:07:57) [GET]
+  Parameters: {"url"=>"/", "action"=>"show", "controller"=>"paginas"}
+  [4;35;1mPagina Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `paginas`[0m
+  [4;36;1mPagina Load (0.7ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/show
+  [4;35;1mEntrada Load (0.4ms)[0m   [0mSELECT * FROM `entradas` WHERE (`entradas`.pagina_id = 1) ORDER BY updated_at DESC[0m
+  [4;36;1mEntrada Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `entradas`[0m
+  [4;35;1mArchivoEntrada Load (0.1ms)[0m   [0mSELECT * FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 2) ORDER BY orden[0m
+Rendered entradas/_entrada (17.9ms)
+  [4;36;1mPagina Load (0.1ms)[0m   [0;1mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;35;1mPagina Load (0.1ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:only_path=>true, :action=>"login", :controller=>"usuarios"}
+Completed in 57ms (View: 39, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-01-17 13:07:58) [GET]
+  Parameters: {"url"=>["images"], "action"=>"show", "controller"=>"paginas"}
+  [4;36;1mPagina Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (0.3ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/images') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/no_encontrado (404)
+  [4;36;1mPagina Load (0.5ms)[0m   [0;1mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;35;1mPagina Load (0.1ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:only_path=>true, :action=>"login", :controller=>"usuarios"}
+Completed in 25ms (View: 12, DB: 3) | 404 Not Found [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-01-17 13:07:59) [GET]
+  Parameters: {"url"=>["images"], "action"=>"show", "controller"=>"paginas"}
+  [4;36;1mPagina Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (3.6ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/images') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/no_encontrado (404)
+  [4;36;1mPagina Load (0.1ms)[0m   [0;1mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;35;1mPagina Load (0.9ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:only_path=>true, :action=>"login", :controller=>"usuarios"}
+Completed in 38ms (View: 12, DB: 6) | 404 Not Found [http://localhost/images/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-01-17 13:08:00) [GET]
+  Parameters: {"url"=>["images", "de"], "action"=>"show", "controller"=>"paginas"}
+  [4;36;1mPagina Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (1.3ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/images/de') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/no_encontrado (404)
+  [4;36;1mPagina Load (0.1ms)[0m   [0;1mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;35;1mPagina Load (0.1ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:only_path=>true, :action=>"login", :controller=>"usuarios"}
+Completed in 31ms (View: 15, DB: 4) | 404 Not Found [http://localhost/images/de]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-01-17 13:08:03) [GET]
+  Parameters: {"url"=>["images", "design"], "action"=>"show", "controller"=>"paginas"}
+  [4;36;1mPagina Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (0.3ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/images/design') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/no_encontrado (404)
+  [4;36;1mPagina Load (6.6ms)[0m   [0;1mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;35;1mPagina Load (1.7ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:only_path=>true, :action=>"login", :controller=>"usuarios"}
+Completed in 38ms (View: 12, DB: 10) | 404 Not Found [http://localhost/images/design]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-01-17 13:08:05) [GET]
+  Parameters: {"url"=>["images", "design"], "action"=>"show", "controller"=>"paginas"}
+  [4;36;1mPagina Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (0.3ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/images/design') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/no_encontrado (404)
+  [4;36;1mPagina Load (4.3ms)[0m   [0;1mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;35;1mPagina Load (0.1ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:only_path=>true, :action=>"login", :controller=>"usuarios"}
+Completed in 30ms (View: 12, DB: 8) | 404 Not Found [http://localhost/images/design/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-01-17 13:08:07) [GET]
+  Parameters: {"url"=>["images", "design", "W"], "action"=>"show", "controller"=>"paginas"}
+  [4;36;1mPagina Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (0.6ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/images/design/W') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/no_encontrado (404)
+  [4;36;1mPagina Load (0.1ms)[0m   [0;1mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;35;1mPagina Load (0.1ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:only_path=>true, :action=>"login", :controller=>"usuarios"}
+Completed in 86ms (View: 69, DB: 2) | 404 Not Found [http://localhost/images/design/W]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-01-17 13:08:08) [GET]
+  Parameters: {"url"=>["images", "design", "WSS"], "action"=>"show", "controller"=>"paginas"}
+  [4;36;1mPagina Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (5.2ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/images/design/WSS') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/no_encontrado (404)
+  [4;36;1mPagina Load (0.1ms)[0m   [0;1mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;35;1mPagina Load (0.3ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:only_path=>true, :action=>"login", :controller=>"usuarios"}
+Completed in 34ms (View: 12, DB: 9) | 404 Not Found [http://localhost/images/design/WSS]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-01-17 13:29:29) [GET]
+  Parameters: {"url"=>"/", "action"=>"show", "controller"=>"paginas"}
+  [4;36;1mPagina Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (0.1ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/show
+  [4;36;1mEntrada Load (0.1ms)[0m   [0;1mSELECT * FROM `entradas` WHERE (`entradas`.pagina_id = 1) ORDER BY updated_at DESC[0m
+  [4;35;1mEntrada Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `entradas`[0m
+  [4;36;1mArchivoEntrada Load (0.3ms)[0m   [0;1mSELECT * FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 2) ORDER BY orden[0m
+Rendered entradas/_entrada (95.5ms)
+  [4;35;1mPagina Load (0.2ms)[0m   [0mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;36;1mPagina Load (0.1ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:only_path=>true, :action=>"login", :controller=>"usuarios"}
+Completed in 180ms (View: 160, DB: 4) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-01-17 13:30:02) [GET]
+  Parameters: {"url"=>"/", "action"=>"show", "controller"=>"paginas"}
+  [4;35;1mPagina Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `paginas`[0m
+  [4;36;1mPagina Load (0.1ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/show
+  [4;35;1mEntrada Load (0.2ms)[0m   [0mSELECT * FROM `entradas` WHERE (`entradas`.pagina_id = 1) ORDER BY updated_at DESC[0m
+  [4;36;1mEntrada Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `entradas`[0m
+  [4;35;1mArchivoEntrada Load (0.1ms)[0m   [0mSELECT * FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 2) ORDER BY orden[0m
+Rendered entradas/_entrada (17.0ms)
+  [4;36;1mPagina Load (0.1ms)[0m   [0;1mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;35;1mPagina Load (0.1ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:only_path=>true, :action=>"login", :controller=>"usuarios"}
+Completed in 66ms (View: 46, DB: 7) | 200 OK [http://localhost/]
