@@ -4,8 +4,8 @@ class EntradasController < ApplicationController
   
   def index
     conditions = {}
-    conditions ||= ["UPPER(nombre) LIKE UPPER(:s)", {:s => "%#{params[:s]}%"}] if params[:s].to_s != ""
-    @entradas = Entrada.paginate :all, :page => params[:page], :per_page => 15, :order => "id DESC", conditions
+    conditions = ["UPPER(nombre) LIKE UPPER(:s)", {:s => "%#{params[:s]}%"}] if(params[:s].to_s != "")
+    @entradas = Entrada.paginate :all, :page => params[:page], :per_page => 15, :order => "id DESC", :conditions => conditions
   end
 
   def show
@@ -61,24 +61,24 @@ class EntradasController < ApplicationController
 
 private
   def enlazar_archivos(archivos_from_params, entrada)
-#     archivos_entradas_ids = []
-#     archivos = {}; archivos ||= archivos_from_params;
-#     archivos.each do |key, value|
-#       if key =~ /archivo_/
-#         archivo_id = value.to_i
-#         archivo_entrada = ArchivoEntrada.find_or_create_by_archivo_id_and_entrada_id(archivo_id,entrada.id)
-#         archivo_entrada.orden = archivos["orden_#{archivo_id}"].to_i
-#         archivo_entrada.muestra_cont = archivos["muestra_contenido_#{archivo_id}"] && archivos["muestra_contenido_#{archivo_id}"].to_i == 1 ? true : false
-#         archivo_entrada.save!
-#         archivos_entradas_ids << archivo_entrada.id
-#       end
-#     end
-#     options_for_delete = ["entrada_id = ?", entrada.id]
-#     unless archivos_entradas_ids.empty?
-#       options_for_delete[0] += " AND id NOT IN (?)"
-#       options_for_delete << archivos_entradas_ids
-#     end
-#     ArchivoEntrada.delete_all(options_for_delete)
+    archivos_entradas_ids = []
+    archivos = {}; archivos ||= archivos_from_params;
+    archivos.each do |key, value|
+      if key =~ /archivo_/
+        archivo_id = value.to_i
+        archivo_entrada = ArchivoEntrada.find_or_create_by_archivo_id_and_entrada_id(archivo_id,entrada.id)
+        archivo_entrada.orden = archivos["orden_#{archivo_id}"].to_i
+        archivo_entrada.muestra_cont = archivos["muestra_contenido_#{archivo_id}"] && archivos["muestra_contenido_#{archivo_id}"].to_i == 1 ? true : false
+        archivo_entrada.save!
+        archivos_entradas_ids << archivo_entrada.id
+      end
+    end
+    options_for_delete = ["entrada_id = ?", entrada.id]
+    unless archivos_entradas_ids.empty?
+      options_for_delete[0] += " AND id NOT IN (?)"
+      options_for_delete << archivos_entradas_ids
+    end
+    ArchivoEntrada.delete_all(options_for_delete)
   end
    
 end

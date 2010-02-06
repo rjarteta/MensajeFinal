@@ -34191,3 +34191,263 @@ Completed in 69ms (View: 39, DB: 5) | 200 OK [http://localhost/paginas/new?local
 Processing Tinymce::HammerController#combine (for 127.0.0.1 at 2010-02-05 20:22:30) [GET]
   Parameters: {"locale"=>"es-CO"}
 Completed in 96ms (View: 0, DB: 1) | 200 OK [http://localhost/javascripts/tinymce_hammer.js?locale=es-CO]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-02-05 22:29:30) [GET]
+  Parameters: {"action"=>"show", "url"=>"/", "controller"=>"paginas"}
+  [4;36;1mPagina Columns (22.7ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (29.4ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/show
+  [4;36;1mEntrada Load (5.1ms)[0m   [0;1mSELECT * FROM `entradas` WHERE (`entradas`.pagina_id = 1) ORDER BY updated_at DESC[0m
+  [4;35;1mEntrada Columns (35.8ms)[0m   [0mSHOW FIELDS FROM `entradas`[0m
+  [4;36;1mArchivoEntrada Load (0.4ms)[0m   [0;1mSELECT * FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 2) ORDER BY orden[0m
+Rendered entradas/_entrada (302.8ms)
+  [4;35;1mPagina Load (0.4ms)[0m   [0mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;36;1mPagina Load (2.2ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:action=>"login", :only_path=>true, :controller=>"usuarios"}
+Completed in 647ms (View: 482, DB: 99) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.9ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-02-05 22:29:38) [GET]
+  Parameters: {"action"=>"show", "url"=>["panchee"], "controller"=>"paginas"}
+  [4;35;1mPagina Columns (46.0ms)[0m   [0mSHOW FIELDS FROM `paginas`[0m
+  [4;36;1mPagina Load (0.4ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/panchee') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/show
+  [4;35;1mEntrada Load (0.9ms)[0m   [0mSELECT * FROM `entradas` WHERE (`entradas`.pagina_id = 2) ORDER BY updated_at DESC[0m
+  [4;36;1mEntrada Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `entradas`[0m
+  [4;35;1mArchivoEntrada Load (0.4ms)[0m   [0mSELECT * FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 1) ORDER BY orden[0m
+Rendered entradas/_entrada (18.1ms)
+  [4;36;1mPagina Load (0.1ms)[0m   [0;1mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;35;1mPagina Load (0.1ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:action=>"login", :only_path=>true, :controller=>"usuarios"}
+Completed in 106ms (View: 41, DB: 51) | 200 OK [http://localhost/panchee]
+  [4;36;1mSQL (5.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#admin_main (for 127.0.0.1 at 2010-02-05 22:29:45) [GET]
+  Parameters: {"action"=>"admin_main", "controller"=>"paginas"}
+default_url_options is passed options: {:only_path=>false, :action=>"show", :use_route=>:root, :controller=>"paginas", :url=>"/"}
+Redirected to http://localhost:3000/?locale=es-CO
+Filter chain halted as [:solo_admins] rendered_or_redirected.
+Completed in 2ms (DB: 5) | 302 Found [http://localhost/admin]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-02-05 22:29:45) [GET]
+  Parameters: {"action"=>"show", "url"=>"/", "controller"=>"paginas", "locale"=>"es-CO"}
+  [4;36;1mPagina Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (0.1ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/show
+  [4;36;1mEntrada Load (0.1ms)[0m   [0;1mSELECT * FROM `entradas` WHERE (`entradas`.pagina_id = 1) ORDER BY updated_at DESC[0m
+  [4;35;1mEntrada Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `entradas`[0m
+  [4;36;1mArchivoEntrada Load (4.2ms)[0m   [0;1mSELECT * FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 2) ORDER BY orden[0m
+Rendered entradas/_entrada (44.0ms)
+  [4;35;1mPagina Load (0.8ms)[0m   [0mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;36;1mPagina Load (10.2ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:action=>"login", :only_path=>true, :controller=>"usuarios"}
+Completed in 98ms (View: 66, DB: 19) | 200 OK [http://localhost/?locale=es-CO]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-02-05 22:29:57) [GET]
+  Parameters: {"action"=>"show", "url"=>"/", "controller"=>"paginas", "locale"=>"en"}
+  [4;35;1mPagina Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `paginas`[0m
+  [4;36;1mPagina Load (0.1ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/show
+  [4;35;1mEntrada Load (8.9ms)[0m   [0mSELECT * FROM `entradas` WHERE (`entradas`.pagina_id = 1) ORDER BY updated_at DESC[0m
+  [4;36;1mEntrada Columns (4.3ms)[0m   [0;1mSHOW FIELDS FROM `entradas`[0m
+  [4;35;1mArchivoEntrada Load (0.1ms)[0m   [0mSELECT * FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 2) ORDER BY orden[0m
+Rendered entradas/_entrada (16.2ms)
+  [4;36;1mPagina Load (10.3ms)[0m   [0;1mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;35;1mPagina Load (0.1ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:action=>"login", :only_path=>true, :controller=>"usuarios"}
+Completed in 92ms (View: 39, DB: 38) | 200 OK [http://localhost/?locale=en]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.0.1 at 2010-02-05 22:33:46) [POST]
+  Parameters: {"commit"=>"Entrar", "action"=>"login", "authenticity_token"=>"57nEBK865cSGZejU90XSnJOjBc8VFSKlmJid67a0EU8=", "controller"=>"usuarios", "locale"=>"en", "password"=>"[FILTERED]", "email"=>"recontrapanche@gmail.com"}
+  [4;36;1mUsuario Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.4ms)[0m   [0mSELECT * FROM `usuarios` WHERE (`usuarios`.`email` = 'recontrapanche@gmail.com') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 93ms (DB: 6) | 302 Found [http://localhost/login?locale=en]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#admin_main (for 127.0.0.1 at 2010-02-05 22:33:47) [GET]
+  Parameters: {"action"=>"admin_main", "controller"=>"paginas"}
+  [4;36;1mUsuario Columns (23.4ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (1.7ms)[0m   [0mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/admin
+default_url_options is passed options: {:only_path=>true, :controller=>"paginas"}
+default_url_options is passed options: {:only_path=>true, :controller=>"entradas"}
+default_url_options is passed options: {:only_path=>true, :controller=>"archivos"}
+default_url_options is passed options: {:only_path=>true, :controller=>"usuarios"}
+Completed in 72ms (View: 29, DB: 26) | 200 OK [http://localhost/admin]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-05 22:33:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"entradas", "locale"=>"es-CO"}
+
+SyntaxError (/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:8: syntax error, unexpected '\n', expecting tASSOC
+/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:66: syntax error, unexpected kDO_BLOCK, expecting kEND
+    archivos.each do |key, value|
+                    ^
+/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:66: syntax error, unexpected '|', expecting '='):
+  
+
+Rendered rescues/_trace (103.9ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-05 22:36:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"entradas", "locale"=>"es-CO"}
+
+SyntaxError (/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:8: syntax error, unexpected '\n', expecting tASSOC
+/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:66: syntax error, unexpected kDO_BLOCK, expecting kEND
+    archivos.each do |key, value|
+                    ^
+/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:66: syntax error, unexpected '|', expecting '='):
+  
+
+Rendered rescues/_trace (45.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-05 22:37:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"entradas", "locale"=>"es-CO"}
+
+SyntaxError (/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:8: syntax error, unexpected '\n', expecting tASSOC
+/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:66: syntax error, unexpected kDO_BLOCK, expecting kEND
+    archivos.each do |key, value|
+                    ^
+/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:66: syntax error, unexpected '|', expecting '='):
+  
+
+Rendered rescues/_trace (43.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-05 22:37:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"entradas", "locale"=>"es-CO"}
+
+SyntaxError (/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:8: syntax error, unexpected '\n', expecting tASSOC
+/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:66: syntax error, unexpected kDO_BLOCK, expecting kEND
+    archivos.each do |key, value|
+                    ^
+/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:66: syntax error, unexpected '|', expecting '='):
+  
+
+Rendered rescues/_trace (45.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-05 22:51:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"entradas", "locale"=>"es-CO"}
+
+SyntaxError (/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:8: syntax error, unexpected '\n', expecting tASSOC
+/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:83: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (40.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-05 22:51:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"entradas", "locale"=>"es-CO"}
+
+SyntaxError (/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:8: syntax error, unexpected '\n', expecting tASSOC
+/home/panche/MEDR/mensajefinal_root/app/controllers/entradas_controller.rb:83: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (43.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EntradasController#index (for 127.0.0.1 at 2010-02-05 22:52:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"entradas", "locale"=>"es-CO"}
+  [4;36;1mUsuario Columns (6.5ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.1ms)[0m   [0mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mEntrada Load (0.4ms)[0m   [0;1mSELECT * FROM `entradas` ORDER BY id DESC, updated_at DESC LIMIT 0, 15[0m
+Rendering template within layouts/admin
+Rendering entradas/index
+default_url_options is passed options: {:action=>"index", :only_path=>true}
+  [4;35;1mEntrada Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `entradas`[0m
+  [4;36;1mPagina Columns (25.7ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (2.2ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`id` = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:action=>"edit", :only_path=>true, :id=>2}
+  [4;36;1mArchivoEntrada Columns (6.3ms)[0m   [0;1mSHOW FIELDS FROM `archivo_entradas`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 2) [0m
+default_url_options is passed options: {:action=>"destroy", :only_path=>true, :id=>2}
+  [4;36;1mPagina Load (0.3ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.`id` = 2) ORDER BY prioridad[0m
+default_url_options is passed options: {:action=>"edit", :only_path=>true, :id=>1}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 1) [0m
+default_url_options is passed options: {:action=>"destroy", :only_path=>true, :id=>1}
+default_url_options is passed options: {:action=>"new", :only_path=>true}
+default_url_options is passed options: {:only_path=>true, :controller=>"paginas"}
+default_url_options is passed options: {:only_path=>true, :controller=>"entradas"}
+default_url_options is passed options: {:only_path=>true, :controller=>"archivos"}
+default_url_options is passed options: {:only_path=>true, :controller=>"usuarios"}
+Completed in 138ms (View: 62, DB: 45) | 200 OK [http://localhost/entradas?locale=es-CO]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EntradasController#index (for 127.0.0.1 at 2010-02-05 22:52:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"entradas", "locale"=>"es-CO"}
+  [4;36;1mUsuario Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.1ms)[0m   [0mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;36;1mEntrada Load (0.1ms)[0m   [0;1mSELECT * FROM `entradas` ORDER BY id DESC, updated_at DESC LIMIT 0, 15[0m
+Rendering template within layouts/admin
+Rendering entradas/index
+default_url_options is passed options: {:action=>"index", :only_path=>true}
+  [4;35;1mEntrada Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `entradas`[0m
+  [4;36;1mPagina Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (0.1ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`id` = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:action=>"edit", :only_path=>true, :id=>2}
+  [4;36;1mArchivoEntrada Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `archivo_entradas`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 2) [0m
+default_url_options is passed options: {:action=>"destroy", :only_path=>true, :id=>2}
+  [4;36;1mPagina Load (0.2ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.`id` = 2) ORDER BY prioridad[0m
+default_url_options is passed options: {:action=>"edit", :only_path=>true, :id=>1}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 1) [0m
+default_url_options is passed options: {:action=>"destroy", :only_path=>true, :id=>1}
+default_url_options is passed options: {:action=>"new", :only_path=>true}
+default_url_options is passed options: {:only_path=>true, :controller=>"paginas"}
+default_url_options is passed options: {:only_path=>true, :controller=>"entradas"}
+default_url_options is passed options: {:only_path=>true, :controller=>"archivos"}
+default_url_options is passed options: {:only_path=>true, :controller=>"usuarios"}
+Completed in 74ms (View: 42, DB: 10) | 200 OK [http://localhost/entradas?locale=es-CO]
