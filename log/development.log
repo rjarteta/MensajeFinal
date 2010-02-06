@@ -34027,3 +34027,167 @@ Rendered entradas/_entrada (17.0ms)
   [4;35;1mPagina Load (0.1ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
 default_url_options is passed options: {:only_path=>true, :action=>"login", :controller=>"usuarios"}
 Completed in 66ms (View: 46, DB: 7) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-02-05 20:15:45) [GET]
+  Parameters: {"action"=>"show", "url"=>"/", "controller"=>"paginas"}
+  [4;36;1mPagina Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (15.4ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/show
+  [4;36;1mEntrada Load (0.5ms)[0m   [0;1mSELECT * FROM `entradas` WHERE (`entradas`.pagina_id = 1) ORDER BY updated_at DESC[0m
+  [4;35;1mEntrada Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `entradas`[0m
+  [4;36;1mArchivoEntrada Load (0.5ms)[0m   [0;1mSELECT * FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 2) ORDER BY orden[0m
+Rendered entradas/_entrada (267.1ms)
+  [4;35;1mPagina Load (0.4ms)[0m   [0mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;36;1mPagina Load (0.5ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:action=>"login", :controller=>"usuarios", :only_path=>true}
+Completed in 807ms (View: 697, DB: 25) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-02-05 20:18:36) [GET]
+  Parameters: {"action"=>"show", "url"=>"/", "controller"=>"paginas"}
+  [4;36;1mPagina Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (0.1ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/show
+  [4;36;1mEntrada Load (0.1ms)[0m   [0;1mSELECT * FROM `entradas` WHERE (`entradas`.pagina_id = 1) ORDER BY updated_at DESC[0m
+  [4;35;1mEntrada Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `entradas`[0m
+  [4;36;1mArchivoEntrada Load (0.1ms)[0m   [0;1mSELECT * FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 2) ORDER BY orden[0m
+Rendered entradas/_entrada (94.4ms)
+  [4;35;1mPagina Load (0.1ms)[0m   [0mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;36;1mPagina Load (0.1ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:action=>"login", :controller=>"usuarios", :only_path=>true}
+Completed in 183ms (View: 160, DB: 6) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#admin_main (for 127.0.0.1 at 2010-02-05 20:18:42) [GET]
+  Parameters: {"action"=>"admin_main", "controller"=>"paginas"}
+default_url_options is passed options: {:action=>"show", :use_route=>:root, :controller=>"paginas", :url=>"/", :only_path=>false}
+Redirected to http://localhost:3000/?locale=es-CO
+Filter chain halted as [:solo_admins] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/admin]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-02-05 20:18:42) [GET]
+  Parameters: {"action"=>"show", "url"=>"/", "controller"=>"paginas", "locale"=>"es-CO"}
+  [4;35;1mPagina Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `paginas`[0m
+  [4;36;1mPagina Load (1.9ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/show
+  [4;35;1mEntrada Load (1.7ms)[0m   [0mSELECT * FROM `entradas` WHERE (`entradas`.pagina_id = 1) ORDER BY updated_at DESC[0m
+  [4;36;1mEntrada Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `entradas`[0m
+  [4;35;1mArchivoEntrada Load (0.1ms)[0m   [0mSELECT * FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 2) ORDER BY orden[0m
+Rendered entradas/_entrada (19.8ms)
+  [4;36;1mPagina Load (1.4ms)[0m   [0;1mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;35;1mPagina Load (0.5ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:action=>"login", :controller=>"usuarios", :only_path=>true}
+Completed in 68ms (View: 41, DB: 13) | 200 OK [http://localhost/?locale=es-CO]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsuariosController#login (for 127.0.0.1 at 2010-02-05 20:22:11) [POST]
+  Parameters: {"commit"=>"Entrar", "action"=>"login", "authenticity_token"=>"eUAQM4vxWyt7dd6iker1xG5YKtqvYg0gdXIzOdcqM5o=", "controller"=>"usuarios", "locale"=>"es-CO", "password"=>"[FILTERED]", "email"=>"recontrapanche@gmail.com"}
+  [4;36;1mUsuario Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.3ms)[0m   [0mSELECT * FROM `usuarios` WHERE (`usuarios`.`email` = 'recontrapanche@gmail.com') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 52ms (DB: 9) | 302 Found [http://localhost/login?locale=es-CO]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#admin_main (for 127.0.0.1 at 2010-02-05 20:22:12) [GET]
+  Parameters: {"action"=>"admin_main", "controller"=>"paginas"}
+  [4;36;1mUsuario Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.3ms)[0m   [0mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/admin
+default_url_options is passed options: {:controller=>"paginas", :only_path=>true}
+default_url_options is passed options: {:controller=>"entradas", :only_path=>true}
+default_url_options is passed options: {:controller=>"archivos", :only_path=>true}
+default_url_options is passed options: {:controller=>"usuarios", :only_path=>true}
+Completed in 159ms (View: 123, DB: 13) | 200 OK [http://localhost/admin]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#show (for 127.0.0.1 at 2010-02-05 20:22:16) [GET]
+  Parameters: {"action"=>"show", "url"=>"/", "controller"=>"paginas"}
+  [4;36;1mPagina Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+  [4;35;1mPagina Load (0.2ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+Rendering template within layouts/mensajefinal
+Rendering paginas/show
+  [4;36;1mUsuario Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `usuarios`[0m
+  [4;35;1mUsuario Load (0.1ms)[0m   [0mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+default_url_options is passed options: {:action=>"edit", :id=>1, :only_path=>true}
+default_url_options is passed options: {:action=>"new", :pagina_id=>1, :controller=>"entradas", :only_path=>true}
+  [4;36;1mEntrada Load (0.1ms)[0m   [0;1mSELECT * FROM `entradas` WHERE (`entradas`.pagina_id = 1) ORDER BY updated_at DESC[0m
+  [4;35;1mEntrada Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `entradas`[0m
+  [4;36;1mArchivoEntrada Load (0.1ms)[0m   [0;1mSELECT * FROM `archivo_entradas` WHERE (`archivo_entradas`.entrada_id = 2) ORDER BY orden[0m
+default_url_options is passed options: {:action=>"edit", :controller=>"entradas", :id=>2, :only_path=>true}
+Rendered entradas/_entrada (18.7ms)
+  [4;35;1mPagina Load (1.1ms)[0m   [0mSELECT id FROM `paginas` WHERE (`paginas`.`url` = '/') ORDER BY prioridad LIMIT 1[0m
+  [4;36;1mPagina Load (0.1ms)[0m   [0;1mSELECT * FROM `paginas` WHERE (`paginas`.pagina_madre_id = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:action=>"editome", :controller=>"usuarios", :id=>1, :only_path=>true}
+Rendered usuarios/_mis_datos (17.8ms)
+Completed in 99ms (View: 75, DB: 8) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#index (for 127.0.0.1 at 2010-02-05 20:22:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"paginas", "locale"=>"es-CO"}
+  [4;35;1mUsuario Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.1ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPagina Load (1.3ms)[0m   [0mSELECT * FROM `paginas` ORDER BY prioridad[0m
+Rendering template within layouts/admin
+Rendering paginas/index
+default_url_options is passed options: {:action=>"new", :only_path=>true}
+  [4;36;1mPagina Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `paginas`[0m
+default_url_options is passed options: {:action=>"edit", :id=>1, :only_path=>true}
+  [4;35;1mEntrada Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `entradas`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `entradas` WHERE (`entradas`.pagina_id = 1) [0m
+  [4;35;1mPagina Load (0.2ms)[0m   [0mSELECT * FROM `paginas` WHERE (`paginas`.`id` = 1) ORDER BY prioridad[0m
+default_url_options is passed options: {:action=>"edit", :id=>2, :only_path=>true}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `entradas` WHERE (`entradas`.pagina_id = 2) [0m
+default_url_options is passed options: {:controller=>"paginas", :only_path=>true}
+default_url_options is passed options: {:controller=>"entradas", :only_path=>true}
+default_url_options is passed options: {:controller=>"archivos", :only_path=>true}
+default_url_options is passed options: {:controller=>"usuarios", :only_path=>true}
+Completed in 58ms (View: 27, DB: 9) | 200 OK [http://localhost/paginas?locale=es-CO]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PaginasController#new (for 127.0.0.1 at 2010-02-05 20:22:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"paginas", "locale"=>"es-CO"}
+  [4;35;1mUsuario Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `usuarios`[0m
+  [4;36;1mUsuario Load (0.1ms)[0m   [0;1mSELECT * FROM `usuarios` WHERE (`usuarios`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPagina Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `paginas`[0m
+Rendering template within layouts/admin
+Rendering paginas/new
+default_url_options is passed options: {:action=>:create, :only_path=>true}
+  [4;36;1mPagina Load (0.1ms)[0m   [0;1mSELECT * FROM `paginas` ORDER BY prioridad[0m
+default_url_options is passed options: {:action=>"index", :only_path=>true}
+default_url_options is passed options: {}
+default_url_options is passed options: {:action=>"combine", :use_route=>:tinymce_hammer_js, :controller=>"tinymce/hammer", :only_path=>true}
+default_url_options is passed options: {:controller=>"paginas", :only_path=>true}
+default_url_options is passed options: {:controller=>"entradas", :only_path=>true}
+default_url_options is passed options: {:controller=>"archivos", :only_path=>true}
+default_url_options is passed options: {:controller=>"usuarios", :only_path=>true}
+Completed in 69ms (View: 39, DB: 5) | 200 OK [http://localhost/paginas/new?locale=es-CO]
+  [4;35;1mSQL (0.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Tinymce::HammerController#combine (for 127.0.0.1 at 2010-02-05 20:22:30) [GET]
+  Parameters: {"locale"=>"es-CO"}
+Completed in 96ms (View: 0, DB: 1) | 200 OK [http://localhost/javascripts/tinymce_hammer.js?locale=es-CO]

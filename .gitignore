@@ -1,3 +1,4 @@
 #Ignorar archivos backup de Kate (~)
 *~
 *.log
+log/development.log
